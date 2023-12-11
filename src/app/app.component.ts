@@ -25,9 +25,9 @@ export class AppComponent {
   calcTaget() {
 
     let azimuth = this.realAzimuth! - this.viewerAzimuth! + this.angle!
-    azimuth = azimuth * (180 / Math.PI)
-    this.targetX = this.sixDigitInputX! + ( (this.distance! * (Math.cos(azimuth)) ));
-    this.targetY = this.sixDigitInputY! + ( (this.distance! * (Math.sin(azimuth)) ));
+    //azimuth = azimuth * (180 / Math.PI)
+    this.targetX = Math.round(  this.sixDigitInputX! + ( (this.distance! * (Math.cos(azimuth)) )) );
+    this.targetY = Math.round(  this.sixDigitInputY! + ( (this.distance! * (Math.sin(azimuth)) )));
   }
 
 }
