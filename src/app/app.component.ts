@@ -6,28 +6,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'קש"א';
-  sixDigitInputX?: number = 670773;
-  sixDigitInputY?: number = 733000;
+  title = ' 0.34 קש"א';
+  sixDigitInputX?: number = 0;
+  sixDigitInputY?: number = 0;
   sixDigitInputShow: boolean = false;
+
+  sixDigitInputXNamam1?:number
+  sixDigitInputYNamam1?:number
+  sixDigitInputXNamam2?:number
+  sixDigitInputYNamam2?:number
+  namam1Azimuth?:number
+  namam2Azimuth?:number
   
   realAzimuth?: number = 0;
   viewerAzimuth?: number = 0;
   calibrateNorthShow: boolean = false;
   
   angle?: number = -1;
-  distance?: number = 224;
+  distance?: number = 1000;
   angleDistanceShow: boolean = false;
   
   targetX?: number;
   targetY?: number;
 
-  calcTaget() {
+  NZmanualButton:boolean= true;
+  NZcalcByNamamButton:boolean = false; 
 
+  calcTaget() {
+    
     let azimuth = this.realAzimuth! - this.viewerAzimuth! + this.angle!
-    //azimuth = azimuth * (180 / Math.PI)
-    this.targetX = Math.round(  this.sixDigitInputX! + ( (this.distance! * (Math.cos(azimuth)) )) );
-    this.targetY = Math.round(  this.sixDigitInputY! + ( (this.distance! * (Math.sin(azimuth)) )));
+    let azimuthDeg = (azimuth / 6400) * 360;
+    let azimuthRad = azimuthDeg * 2 * Math.PI / 360;
+    this.targetX = Math.round(  this.sixDigitInputX! + ( (this.distance! * (Math.sin(azimuthRad)) )) );
+    this.targetY = Math.round(  this.sixDigitInputY! + ( (this.distance! * (Math.cos(azimuthRad)) )));
   }
 
 }
