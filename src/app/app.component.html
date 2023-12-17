@@ -37,9 +37,11 @@
 
   <div class="card-container">
     <button (click)="targetX = targetY = 0" class="card" target="_blank" rel="noopener"
-      (click)="sixDigitInputShow = !sixDigitInputShow; angleDistanceShow=false; calibrateNorthShow = false;">
+      (click)="sixDigitInputShow = !sixDigitInputShow; angleDistanceShow=false; calibrateNorthShow = false; calcNorthByTargetShow=false;">
 
-      <span>הכנס נ.צ עצמי</span>
+      <span>נ.צ עצמי <span>
+        {{sixDigitInputX}}:{{sixDigitInputY}}
+      </span></span>
       <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -92,7 +94,7 @@
             [(ngModel)]="sixDigitInputY" minlength="6" maxlength="6" required />
         </div>
       </div>
-      <div *ngIf="NZcalcByNamamButton">
+      <div *ngIf="NZcalcByNamamButton" class="flex-mid-col">
 
         <!-- נממ 1 -->
 
@@ -101,6 +103,7 @@
           minlength="6" maxlength="6" required />
           <label>אזימוט לנממ 1</label>
         </div>
+        <label>נ.צ נממ 1</label>
         <div class="flex-mid">
           <input style="width: 30%;" type="number" id="sixDigitInputXNamam1" name="sixDigitInputXNamam1"
             [(ngModel)]="sixDigitInputXNamam1" minlength="6" maxlength="6" required />
@@ -116,6 +119,7 @@
           minlength="6" maxlength="6" required />
           <label>אזימוט לנממ 2</label>
         </div>
+        <label>נ.צ נממ 2</label>
         <div class="flex-mid">
           <input style="width: 30%;" type="number" id="sixDigitInputXNamam2" name="sixDigitInputXNamam2"
             [(ngModel)]="sixDigitInputXNamam2" minlength="6" maxlength="6" required />
@@ -124,7 +128,7 @@
             [(ngModel)]="sixDigitInputYNamam2" minlength="6" maxlength="6" required />
         </div>
 
-        <button class="card" (click)="null">חשב נ.צ עצמי <span><svg width="24px" height="24px"
+        <button class="card calcButton" (click)="calcByNamams();">חשב <span><svg width="24px" height="24px"
           viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
           <path stroke="#000000" stroke-linecap="round" stroke-width="12"
             d="M51.152 26v58.303M22 55.151h58.303m31.394 0H170m-58.303 102.031H170m-58.303-24.667H170m-139.462-8.28 41.227 41.227m-41.227 0 41.227-41.227" />
@@ -135,9 +139,29 @@
 
 
     <button (click)="targetX = targetY = 0" class="card" target="_blank"
-      (click)="calibrateNorthShow=!calibrateNorthShow; sixDigitInputShow=false; angleDistanceShow=false;">
+      (click)="calibrateNorthShow=false; sixDigitInputShow=false; angleDistanceShow=false; calcNorthByTargetShow = !calcNorthByTargetShow">
 
-      <span>כייל צפון</span>
+      <span>חשב צפון ע"י נ.צ מטרה <span>000</span></span>
+      <svg fill="#000000" width="24px" height="24px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+        <g>
+        
+        <path d="m75 20.37h-17.19a5 5 0 0 0 -5 5v17a5 5 0 0 0 5 5h17.19a5 5 0 0 0 5-5v-17a5 5 0 0 0 -5-5zm-1 6v15h-15.18v-15z"/>
+        
+        <path d="m28 51a1.64 1.64 0 0 0 -1.56 1.71l-.08 3.51a1.64 1.64 0 0 0 1.64 1.61h6.2a1.08 1.08 0 0 1 .82.33 1.18 1.18 0 0 1 .08 1.71l-14.56 14.47a1.68 1.68 0 0 0 -.09 2.37l2.47 2.45a2.12 2.12 0 0 0 2.55.08l14.68-14.55a.88.88 0 0 1 .58-.25 1.28 1.28 0 0 1 1.4 1.06l.08 5.22a1.64 1.64 0 0 0 1.64 1.63l3.54.09a1.65 1.65 0 0 0 1.61-1.64v-18a1.65 1.65 0 0 0 -1.65-1.64z"/>
+        
+        </g>
+        
+        </svg>
+
+    </button>
+
+    
+
+    <button (click)="targetX = targetY = 0" class="card" target="_blank"
+      (click)="calibrateNorthShow=!calibrateNorthShow; sixDigitInputShow=false; angleDistanceShow=false; calcNorthByTargetShow=false;">
+
+      <span>כייל צפון <span>{{this.realAzimuth! - this.viewerAzimuth!}}</span></span>
       <svg width="24px" height="24px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--gis"
         preserveAspectRatio="xMidYMid meet">
@@ -163,7 +187,7 @@
     </div>
 
     <button (click)="targetX = targetY = 0" class="card" target="_blank" rel="noopener"
-      (click)="angleDistanceShow=!angleDistanceShow; sixDigitInputShow=false; calibrateNorthShow=false;">
+      (click)="angleDistanceShow=!angleDistanceShow; sixDigitInputShow=false; calibrateNorthShow=false; calcNorthByTargetShow=false;">
 
       <span>הכנס קו טווח מטרה</span>
       <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" id="angel-45" data-name="Line Color"
@@ -188,7 +212,7 @@
       <input (click)="targetX = targetY = 0" type="number" id="distance" name="distance" [(ngModel)]="distance"
         minlength="1" maxlength="4" required />
 
-      <button class="card" (click)="calcTaget()">חשב נ.צ מטרה <span><svg width="24px" height="24px"
+      <button class="card calcButton" (click)="calcTaget()">חשב נ.צ מטרה <span><svg width="24px" height="24px"
             viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
             <path stroke="#000000" stroke-linecap="round" stroke-width="12"
               d="M51.152 26v58.303M22 55.151h58.303m31.394 0H170m-58.303 102.031H170m-58.303-24.667H170m-139.462-8.28 41.227 41.227m-41.227 0 41.227-41.227" />
