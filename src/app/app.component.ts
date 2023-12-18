@@ -9,7 +9,7 @@ import { UtilsService } from './services/utils.service';
 export class AppComponent {
 
   constructor(public _utilsService: UtilsService) { }
-  title = ' 0.37 קש"א';
+  title = ' 0.41 קש"א';
   _sixDigitInputX?: number = parseInt(window.localStorage.getItem('sixDigitInputX') ?? '0');
   _sixDigitInputY?: number = parseInt(window.localStorage.getItem('sixDigitInputY') ?? '0');
 
@@ -79,6 +79,7 @@ export class AppComponent {
   NZcalcByNamamButton: boolean = false;
 
   calcNorthByTargetShow: boolean = false;
+  showMenu: boolean = false;
 
   calcTaget() {
 
@@ -98,8 +99,8 @@ export class AppComponent {
 
   calcByNamams() {
 
-    let namam1AzimuthRad = this._utilsService.alpToRad(this.namam1Azimuth!)
-    let namam2AzimuthRad = this._utilsService.alpToRad(this.namam2Azimuth!)
+    let namam1AzimuthRad = this._utilsService.alpToRad(this.namam1Azimuth! + this.realAzimuth! - this.viewerAzimuth!)
+    let namam2AzimuthRad = this._utilsService.alpToRad(this.namam2Azimuth! + this.realAzimuth! - this.viewerAzimuth!)
 
     let cord = this.getSelfCordByNamams(this.sixDigitInputXNamam1!, this.sixDigitInputYNamam1!, namam1AzimuthRad, this.sixDigitInputXNamam2!, this.sixDigitInputYNamam2!, namam2AzimuthRad)
 
