@@ -2,13 +2,13 @@
   <div #navBar class="w-full items-center flex flex-row-reverse justify-between bg-red-400 p-2">
     <button (click)="isMenuOpen = !isMenuOpen" [cdkMenuTriggerFor]="menu" class="transition-transform "
       [ngClass]="isMenuOpen ? '-rotate-90' : ''">
-      <img class="w-8 h-8" src="/assets/menu.svg" alt="תפריט" srcset=""> </button>
+      <img class="w-8 h-8" src="./assets/menu.svg" alt="תפריט" srcset=""> </button>
     <span class="text-black tracking-widest font-semibold">{{ title }} </span>
     <div>
     </div>
   </div>
 </div>
-<img src="/assets/rocket.svg" alt="rocket" class="absolute -top-3 -left-3">
+<img src="./assets/rocket.svg" alt="rocket" class="absolute -top-3 -left-3">
 
 <ng-template #menu>
   <div cdkMenu class="flex flex-col gap-2 bg-white p-2 rounded-md shadow-md">
