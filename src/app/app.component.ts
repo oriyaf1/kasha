@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = ' 0.43 קש"א';
+  title = ' 0.44 קש"א';
   isMenuOpen:boolean = false;
 
 }
