@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1702879465603,
+  "timestamp": 1707083194622,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.b7d4e5c01d7c924f.js",
+        "/main.a85d683c00b059cd.js",
         "/manifest.webmanifest",
         "/polyfills.ad4cb634d079e5da.js",
         "/runtime.cef2dcb4b53b6583.js",
-        "/styles.bb03fb1c87ff4084.css"
+        "/styles.11b60cc604e601ed.css"
       ],
       "patterns": []
     },
@@ -29,6 +29,8 @@
         "ignoreVary": true
       },
       "urls": [
+        "/assets/Cannon_fire.jpg",
+        "/assets/MAZRER.jpg",
         "/assets/icons/icon-128x128.png",
         "/assets/icons/icon-144x144.png",
         "/assets/icons/icon-152x152.png",
@@ -36,13 +38,17 @@
         "/assets/icons/icon-384x384.png",
         "/assets/icons/icon-512x512.png",
         "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png"
+        "/assets/icons/icon-96x96.png",
+        "/assets/menu.svg",
+        "/assets/rocket.svg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
+    "/assets/Cannon_fire.jpg": "c4f82119675b89e6ca81e6645c1644c15601706f",
+    "/assets/MAZRER.jpg": "04388ce8cf00ae18687c7764892a7f00d350357d",
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -51,13 +57,15 @@
     "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/menu.svg": "8b5d335fcb140468452467e4c3b3cff40814dea7",
+    "/assets/rocket.svg": "78eb7eec166bb139b53e733bff3765ee3a3748e4",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "e5844a801f4db5b6de5558cb5cf62f96aea079c3",
-    "/main.b7d4e5c01d7c924f.js": "d530b708f4a509833329b9bd7936e6ffe9462f5b",
+    "/index.html": "de68bf9a3ffa015484af5767a5fa4ae577f7f9eb",
+    "/main.a85d683c00b059cd.js": "b08e2162dc4a0cbd9db596348a3408c20f565472",
     "/manifest.webmanifest": "42707f3465f0520c1e0bd2ea70e0ae2c15873f32",
     "/polyfills.ad4cb634d079e5da.js": "c837fe4670332e61fcc5dc37216ffb64e985caa6",
     "/runtime.cef2dcb4b53b6583.js": "01be7befe9efe8b899268eab4c8dd3a83cb08c77",
-    "/styles.bb03fb1c87ff4084.css": "7685b58d42552b5f63ccc1366b9f2120f26a976a"
+    "/styles.11b60cc604e601ed.css": "859e81865adb9e0b97ada01b36c9009bfc35d69c"
   },
   "navigationUrls": [
     {
